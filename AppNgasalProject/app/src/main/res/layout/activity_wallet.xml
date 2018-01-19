@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor"
+    tools:context="tercyduk.appngasal.Activity.Wallet">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginTop="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/wallet"
+                />
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <TextView
+                    style="@style/LoginSingup"
+                    android:id="@+id/txtwallets"
+                    android:hint="Tambahkan Topups"
+                    android:textSize="26dp"
+                    android:textColor="@color/bgcolor"
+                    android:textStyle="italic"
+                    android:layout_marginTop="-8dp"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <View style="@style/Divider"/>
+
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnTopup"
+            style="@style/ButtonOrange"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@color/button_orange"
+            android:text="Topup"/>
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

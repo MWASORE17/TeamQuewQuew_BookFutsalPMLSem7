@@ -1,0 +1,46 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<a href="/admin/lapangan/add"><button type="button" class="btn btn-primary">Tambah Lapangan</button></a>
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama Lapangan</th>
+                <th>Kecamatan</th>
+                <th>Alamat</th>
+                <th>Jenis Lapangan</th>
+                <th>Harga</th>
+                <th>Deskripsi</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <%
+            for(var _index=0; _index < futsal_field.length; _index++) {
+                var _futsal_field = futsal_field[_index];
+
+                var img = _futsal_field.photo_url;
+                var imgname = img.slice(20);
+                var image = "http://localhost:1337/"+imgname;
+            %>
+            
+            <tr>
+                <td><%=_futsal_field.id%></td>
+                <td><%=_futsal_field.futsal_name%></td>
+                <td><%=_futsal_field.districts%></td>
+                <td><%=_futsal_field.address%></td>
+                <td><%=_futsal_field.type_field%></td>
+                <td><%=_futsal_field.price%></td>
+                <td><%=_futsal_field.description%></td>
+                <td><img src="<%=image%>" alt="<%=_futsal_field.futsal_name%>" class="img-circle" width="50px" height="50px"></td>
+                <td>
+                        <a href="../../futsal_field/ubah/<%=_futsal_field.id%>">
+                            <button class="btn-warning" ><i class="material-icons">border_color</i></button>
+                        </a>
+                        <a href="../../futsal_field/delete/<%=_futsal_field.id%>"><button class="btn-danger" type="submit"><i class="material-icons">delete</i></button></a>
+                </td>
+            </tr>
+            <%}%>
+        </tbody>
+

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tercyduk.appngasal.Activity.Profil"
+    >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:outlineProvider="bounds"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="#FFFF"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <com.github.siyamed.shapeimageview.CircularImageView
+                        android:id="@+id/photo_profil"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="23dp"
+                        app:siBorderColor="#ffffff"
+                        app:siBorderWidth="2dp" />
+
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:textColor="#000"
+                        android:text="Nama"/>
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:hint="name"
+                        android:id="@+id/edp.txt.name"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content">
+                        <Button
+                            android:layout_width="130dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="-5dp"
+                            android:drawablePadding="10dp"
+                            android:text="Edit Profile"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textAllCaps="false"
+                            android:id="@+id/btnEdit"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <View style="@style/Divider"></View>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="#fff"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="15dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:text="Email"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="email"
+                    android:id="@+id/edp.txt.email"
+                    android:layout_height="wrap_content"
+
+                    />
+            </LinearLayout>
+            <View style="@style/Divider"></View>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="15dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#000"
+                        android:text="No Handphone"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="nohp"
+                        android:id="@+id/edp.txt.hp"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
+            <View style="@style/Divider"></View>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="15dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#000"
+
+                        android:text="Alamat"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="alamat"
+                        android:id="@+id/edp.txt.alamat"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
+            <View style="@style/Divider">
+
+            </View>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="15dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#000"
+                        android:text="Chart"/>
+
+                </LinearLayout>
+
+            <View style="@style/Divider"></View>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="310dp">
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/piechart"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp">
+
+                </com.github.mikephil.charting.charts.PieChart>
+
+
+            </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+

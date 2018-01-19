@@ -1,0 +1,93 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User Id</th>
+                <th>FutsalField Id</th>
+                <th>Tanggal Main</th>
+                <th>Jam Main</th>
+                <th>Lama Main</th>
+                <th>Metode Pembayaran</th>
+                <th>Total Transfer</th>
+                <th>Jumlah Transfer</th>
+                <th>Nama Bank U</th>
+                <th>No Rek</th>
+                <th>Nama Pemilik</th>
+                <th>Nama Bank A</th>
+                <th>Tgl Trf</th>
+                <th>Catatan</th>
+                <th>Status</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            
+            <%
+            for(var _index=0; _index < bookings.length; _index++) {
+                var _bookings = bookings[_index];
+
+                
+            %>
+            
+            <tr>
+                <td><%=_bookings.id%></td>
+                <td><%=_bookings.user_id%></td>
+                <td><%=_bookings.futsal_field_id%></td>
+                <td><%=_bookings.date%></td>
+                <td><%=_bookings.time%></td>
+                <td><%=_bookings.duration%></td>
+                <td><%=_bookings.pembayaran%></td>
+                <td><%=_bookings.total_transfer%></td>
+                <td><%=_bookings.jumlah_transfer%></td>
+                <td><%=_bookings.bankuser_name%></td>
+                <td><%=_bookings.bankuser_account_number%></td>
+                <td><%=_bookings.name_bankuser%></td>
+                <td><%=_bookings.bankadmin_name%></td>
+                <td><%=_bookings.transfer_date%></td>
+                <td><%=_bookings.information%></td>
+                <td><%=_bookings.status%></td>
+                <td>
+                    
+                    <%
+                        if(_bookings.status=="Menunggu Konfirmasi"){
+                    %>
+                    <form method="post" action="../../booking/ganti/<%=_bookings.id%>">
+                        <input type="hidden" name="user_id" value="<%=_bookings.user_id%>">
+                        <input type="hidden" name="total_transfer" value="<%=_bookings.total_transfer%>">
+                        <input type="hidden" name="status" value="Selesai">
+                        <button class="btn-primary" type="submit" >Konfirmasi</button>
+                    </form>
+                    <form method="post" action="../../booking/ganti/<%=_bookings.id%>">
+                        <input type="hidden" name="status" value="Dibatalkan">
+                        <button class="btn-danger" type="submit" >Batalkan</button>
+                    </form>
+                   
+                    <%
+                        }
+                        else if(_bookings.status=="Selesai"){
+                    %>
+                    <div class="alert alert-success">
+                        <strong>Selesai</strong>
+                      </div>
+                      
+                    <%
+                        }
+                        else if(_bookings.status=="Dibatalkan"){
+                            %>
+                            <div  class="alert alert-danger">
+                                <strong>Dibatalkan</strong>
+                              </div>
+                              
+                        <%
+                            }
+                    %>
+                    
+                    
+                        
+                    
+                </td>
+            </tr>
+            <%}%>
+        </tbody>

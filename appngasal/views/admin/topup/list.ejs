@@ -1,0 +1,85 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User Id</th>
+                <th>Total Transfer</th>
+                <th>Jumlah Transfer</th>
+                <th>Nama Bank U</th>
+                <th>No Rek</th>
+                <th>Nama Pemilik</th>
+                <th>Nama Bank A</th>
+                <th>Tgl Trf</th>
+                <th>Catatan</th>
+                <th>Status</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            
+            <%
+            for(var _index=0; _index < transfer_topup.length; _index++) {
+                var _transfer_topup = transfer_topup[_index];
+
+                
+            %>
+            
+            <tr>
+                <td><%=_transfer_topup.id%></td>
+                <td><%=_transfer_topup.user_id%></td>
+                <td><%=_transfer_topup.total_transfer%></td>
+                <td><%=_transfer_topup.jumlah_transfer%></td>
+                <td><%=_transfer_topup.bankuser_name%></td>
+                
+                <td><%=_transfer_topup.bankuser_account_number%></td>
+                <td><%=_transfer_topup.name_bankuser%></td>
+                <td><%=_transfer_topup.bankadmin_name%></td>
+                <td><%=_transfer_topup.transfer_date%></td>
+                <td><%=_transfer_topup.information%></td>
+                <td><%=_transfer_topup.status%></td>
+                
+                <td>
+                    
+                    <%
+                        if(_transfer_topup.status=="Menunggu Konfirmasi"){
+                    %>
+                    <form method="post" action="../../transfer_topup/ganti/<%=_transfer_topup.id%>">
+                        <input type="hidden" name="user_id" value="<%=_transfer_topup.user_id%>">
+                        <input type="hidden" name="total_transfer" value="<%=_transfer_topup.total_transfer%>">
+                        <input type="hidden" name="status" value="Selesai">
+                        <button class="btn-primary" type="submit" >Konfirmasi</button>
+                    </form>
+                    <form method="post" action="../../transfer_topup/ganti/<%=_transfer_topup.id%>">
+                        <input type="hidden" name="status" value="Dibatalkan">
+                        <button class="btn-danger" type="submit" >Batalkan</button>
+                    </form>
+                   
+                    <%
+                        }
+                        else if(_transfer_topup.status=="Selesai"){
+                    %>
+                    <div class="alert alert-success">
+                        <strong>Selesai</strong>
+                      </div>
+                      
+                    <%
+                        }
+                        else if(_transfer_topup.status=="Dibatalkan"){
+                            %>
+                            <div  class="alert alert-danger">
+                                <strong>Dibatalkan</strong>
+                              </div>
+                              
+                        <%
+                            }
+                    %>
+                    
+                    
+                        
+                    
+                </td>
+            </tr>
+            <%}%>
+        </tbody>

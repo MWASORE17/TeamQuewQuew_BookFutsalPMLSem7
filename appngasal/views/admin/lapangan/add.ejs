@@ -1,0 +1,45 @@
+<%if(status === "Error") { %>
+    <div class="alert alert-danger" role="alert"><%=statusDescription%></div>
+    <% } %>
+    <form enctype="multipart/form-data" role="form"action="../../futsal_field/tambah" method="post">
+        <!-- This line below is to support PUT HTTP method. Works only in Express JS Server. It's cool-->
+        
+      
+      <div class="form-group">
+        <label for="txtFutsalName">Nama Lapangan</label>
+        <input type="text" class="form-control" name="futsal_name" id="txtFutsalName" placeholder="Nama Lapangan">
+      </div>
+      <div class="form-group">
+        <label for="txtDistricts">Kecamatan</label>
+        <input type="text" class="form-control" name="districts" id="txtDistricts" placeholder="Kecamatan">
+      </div>
+      <div class="form-group">
+        <label for="txtAddress">Alamat</label>
+        <input type="text" class="form-control" name="address" id="txtAddress" placeholder="alamat">
+      </div>
+      <div class="form-group">
+        <label for="txtTypeField">Jenis Lapangan</label>
+        <select class="form-control" name="type_field">
+            <option value="Rumput">Rumput</option>
+            <option value="Semen">Semen</option>
+        </select>
+        
+      </div>
+      <div class="form-group">
+        <label for="txtHarga">Harga</label>
+        <input type="text" class="form-control" name="price" id="txtHarga" placeholder="Harga" 
+      </div>
+      <div class="form-group">
+            <label for="txtaDeskripsi">Deskripsi</label>
+            <textarea class="form-control" name="description" id="txtaDeskripsi"></textarea>
+            
+          </div>
+      <div class="form-group">
+        <label for="fileImage">Photo Lapangan</label>
+        <input class="form-control" type="file" id="userPhotoInput" name="photo_url" />
+      </div>
+        
+          <p></p>
+        
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>

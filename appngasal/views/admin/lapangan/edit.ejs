@@ -1,0 +1,53 @@
+<%if(status === "Error") { %>
+    <div class="alert alert-danger" role="alert"><%=statusDescription%></div>
+    <% } %>
+    <%if(status !== "Error" || errorType === "validation-error") { 
+        
+        %>
+    <%
+        var img = futsal_field.photo_url;
+        var imgname = img.slice(20);
+        var image = "http://localhost:1337/"+imgname;
+    %>
+    <img src="<%=image%>" alt="<%=image%>"  width="200px" height="200px"/>
+    <form enctype="multipart/form-data" role="form" action="../../futsal_field/ganti/<%=futsal_field.id%>"  method="post">
+        <!-- This line below is to support PUT HTTP method. Works only in Express JS Server. It's cool-->
+        
+       
+       
+       <div class="form-group">
+            <label for="txtFutsalName">Nama Lapangan</label>
+            <input type="text" class="form-control" name="futsal_name" id="txtFutsalName" placeholder="Nama Lapangan" value="<%=futsal_field.futsal_name%>">
+          </div>
+          <div class="form-group">
+            <label for="txtDistricts">Kecamatan</label>
+            <input type="text" class="form-control" name="districts" id="txtDistricts" placeholder="Kecamatan" value="<%=futsal_field.districts%>">
+          </div>
+          <div class="form-group">
+            <label for="txtAddress">Alamat</label>
+            <input type="text" class="form-control" name="address" id="txtAddress" placeholder="alamat" value="<%=futsal_field.address%>">
+          </div>
+          <div class="form-group">
+            <label for="txtTypeField">Jenis Lapangan</label>
+            <select class="form-control" name="type_field">
+                <option value="Rumput">Rumput</option>
+                <option value="Semen">Semen</option>
+            </select>
+            
+          </div>
+          <div class="form-group">
+            <label for="txtHarga">Harga</label>
+            <input type="text" class="form-control" name="price" id="txtHarga" placeholder="Harga" value="<%=futsal_field.price%>"> 
+          </div>
+          <div class="form-group">
+                <label for="txtaDeskripsi">Deskripsi</label>
+                <textarea class="form-control" name="description" id="txtaDeskripsi"><%=futsal_field.description%></textarea>
+                
+              </div>
+          <div class="form-group">
+            <label for="fileImage">Photo Lapangan</label>
+            <input class="form-control" type="file" id="userPhotoInput" name="photo_url" />
+          </div>
+        
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form><% } %>

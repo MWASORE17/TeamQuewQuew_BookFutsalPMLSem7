@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/profile"
+            android:icon="@mipmap/user"
+            android:textSize="16sp"
+            android:title="Profil" />
+        <item
+            android:id="@+id/history"
+            android:icon="@mipmap/historyicon"
+            android:title="Pemesanan" />
+        <item
+            android:id="@+id/topups"
+            android:icon="@mipmap/payment"
+            android:title="Isi Saldo" />
+        <item
+            android:id="@+id/topupshistory"
+            android:icon="@mipmap/transfer"
+            android:title="Transaksi" />
+        <item
+            android:id="@+id/wallet"
+            android:icon="@mipmap/walleticon"
+            android:title="Sakuku" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@mipmap/exit"
+            android:title="Log out" />
+    </group>
+
+    <!--<item android:title="Communicate">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_send"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Send" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>
